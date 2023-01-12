@@ -18,11 +18,11 @@ public class CreditCardRequest {
     private String name;
 
     @NotNull
+    @ValidateCreditCardNumber
     private String card_number;
 
     @NotNull
     @Min(0)
-    @ValidateCreditCardNumber
     private Long card_limit;
 
     private Long balance = 0L;
