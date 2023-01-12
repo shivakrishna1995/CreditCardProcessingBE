@@ -1,4 +1,4 @@
-package com.creditcardprocessing.main;
+package com.creditcardprocessing.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
