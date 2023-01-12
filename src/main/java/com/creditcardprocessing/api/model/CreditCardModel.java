@@ -13,13 +13,13 @@ public class CreditCardModel {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String name;
 
     private String card_number;
 
-    private long card_limit;
+    private Long card_limit;
 
-    private long balance = 0;
+    private Long balance = 0L;
 }

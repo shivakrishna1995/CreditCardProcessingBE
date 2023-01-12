@@ -1,6 +1,9 @@
 package com.creditcardprocessing.api.dto;
 
-import jakarta.persistence.Entity;
+import com.creditcardprocessing.api.annotation.ValidateCreditCardNumber;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,11 +12,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
 public class CreditCardRequest {
+
+    @NotNull
+    @Size(min=1, message = "provide valid name")
     private String name;
 
+    @NotNull
     private String card_number;
 
-    private long card_limit;
+    @NotNull
+    @Min(0)
+    @ValidateCreditCardNumber
+    private Long card_limit;
 
-    private long balance = 0;
+    private Long balance = 0L;
 }

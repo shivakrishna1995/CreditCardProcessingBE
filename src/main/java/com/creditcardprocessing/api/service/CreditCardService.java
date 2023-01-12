@@ -16,7 +16,7 @@ public class CreditCardService {
 
     public CreditCardModel addCreditCard(CreditCardRequest ccRequest) {
         CreditCardModel ccModel = CreditCardModel.build(
-                0,
+                (long) 0L,
                 ccRequest.getName(),
                 ccRequest.getCard_number(),
                 ccRequest.getCard_limit(),
