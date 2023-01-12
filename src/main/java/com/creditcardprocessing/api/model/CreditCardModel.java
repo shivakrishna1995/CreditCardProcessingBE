@@ -8,7 +8,7 @@ import lombok.*;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "build")
 public class CreditCardModel {
 
     @Id
