@@ -19,12 +19,14 @@ public class CreditCardController {
     private CreditCardService ccService;
 
     @PostMapping("/add")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<CreditCardModel> addCreditCard(@RequestBody @Valid CreditCardRequest ccRequest) {
         CreditCardModel ccModel = ccService.addCreditCard(ccRequest);
         return new ResponseEntity<>(ccModel, HttpStatus.CREATED);
     }
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<List<CreditCardModel>> getAllCreditCards() {
         List<CreditCardModel> ccList = ccService.getAllCreditCards();
         if(ccList.isEmpty()){
